@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class CreateOrChangePatienceCardRecordForNurse {
 
-    public static final String TEXT_REGEX = "^[A-Z\\u0430-\\u044F\\u0451][a-zA-Z0-9_\\-;.,\\u0430-\\u044F\\u0451\\u0410-\\u042F\\u0401 ]{1,254}$";
+    public static final String TEXT_REGEX = "^[A-Z\\u0430-\\u044F\\u0451]?[a-zA-Z0-9_\\-;.,\\u0430-\\u044F\\u0451\\u0410-\\u042F\\u0401 ]{0,254}$";
     public static final String INCORRECT_PROCEDURES = "Procedures entered incorrect!";
     public static final String INCORRECT_MEDICINES = "Medicines entered incorrect!";
     public static final String EMPTY = "Please enter info in some of the field!";

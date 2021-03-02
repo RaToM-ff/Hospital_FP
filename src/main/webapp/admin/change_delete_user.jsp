@@ -56,17 +56,17 @@
 <form method="POST" action="/Hospital_FP/controller">
 		<input type="hidden" name="command" value="changeUserByAdmin">
 	<p><b><fmt:message key='LOGIN_UPPER_F'/>:</b></p>
-		<input type="text" name="login" placeholder="Login" value="${user.login}"><div class="error_field">${errors.login}</div>
+		<input type="text" name="login" value="${user.login}"><div class="error_field">${errors.login}</div>
     <p><b><fmt:message key='GENERATE_NEW_PASSWORD'/>:</b>
         <input type="checkbox" name="password" value="checked" />
         </p>
 	<p><b><fmt:message key='NAME_UPPER_F'/>:</b></p>
-		<input type="text" name="name" placeholder="Name" value="${user.name}"><div class="error_field">${errors.name}</div>
+		<input type="text" name="name" value="${user.name}"><div class="error_field">${errors.name}</div>
     <p><b><fmt:message key='SERNAME_UPPER_F'/>:</b></p>
-    	<input type="text" name="sername" placeholder="Sername" value="${user.sername}">
+    	<input type="text" name="sername" value="${user.sername}">
         <div class="error_field">${errors.sername}</div>
     <p><b><fmt:message key='PATRONYMIC_UPPER_F'/>:</b></p>
-    	<input type="text" name="patronymic" placeholder="Patronymic" value="${user.patronymic}"><div class="error_field">${errors.patronymic}</div>
+    	<input type="text" name="patronymic" value="${user.patronymic}"><div class="error_field">${errors.patronymic}</div>
         <c:if test="${user.status.id=='1'}">
             <input type="hidden" name="statusIdChangeUser" value="1">
             <input type="hidden" name="workIdChangeUser"value="1">

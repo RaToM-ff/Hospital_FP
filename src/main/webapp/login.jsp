@@ -26,7 +26,7 @@
     <p><b><fmt:message key='LOGIN_UPPER_F'/>:</b></p>
 	<input type="text" name="login" value="${oldLogin}"><div class="error_field">${errors.login}</div>
 	<p><b><fmt:message key='PASSWORD_UPPER_F'/>:</b></p>
-	<input type="password" name="password" placeholder="Password"><div class="error_field">${errors.password}</div>
+	<input type="password" name="password"><div class="error_field">${errors.password}</div>
     <br>
     <input class="functional_but blue_but" type="submit" value="<fmt:message key='SING_IN'/>">
     <p>

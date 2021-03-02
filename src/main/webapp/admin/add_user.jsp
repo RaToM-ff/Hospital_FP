@@ -2,8 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<fmt:setLocale value="ru_RU"/><!-- value="${language}" -->
+<fmt:setLocale value="${language}"/>
 <fmt:setBundle basename='property'/>
+
+<fmt:message key=''/>
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -41,6 +44,18 @@
     	<i><fmt:message key='DOCTOR_UPPER_F'/></i>
     </c:if>
 </h2>
+
+
+
+
+    <div style="text-align: right;">
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=ru_RU">RU</a>
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=en_US">EN</a>
+    </div>
+
+
+
+
 <hr>
 <div class="content_div">
     <h3><fmt:message key='EDIT_DATA_UPPER_F'/>:</h3>
@@ -48,29 +63,29 @@
         <form method="POST" action="/Hospital_FP/controller">
         		<input type="hidden" name="command" value="createNewUser">
         	<p><fmt:message key='LOGIN_UPPER_F'/>:</p>
-        		<input type="text" name="login" value="${user.login}"><div class="error_field">Error message!</div>
+        		<input type="text" name="login" value="${user.login}"><div class="error_field">${errors.login}</div>
         	<p><fmt:message key='PASSWORD_UPPER_F'/>:</p>
-        		<input type="text" name="password"><div class="error_field">Error message!</div>
+        		<input type="text" name="password"><div class="error_field">${errors.password}</div>
         	<p><fmt:message key='NAME_UPPER_F'/>:</p>
-        		<input type="text" name="name" value="${user.name}"><div class="error_field">${error.name}</div>
+        		<input type="text" name="name" value="${user.name}"><div class="error_field">${errors.name}</div>
             <p><fmt:message key='SERNAME_UPPER_F'/>:</p>
-            	<input type="text" name="sername" value="${user.sername}"><div class="error_field">Error message!</div>
+            	<input type="text" name="sername" value="${user.sername}"><div class="error_field">${errors.sername}</div>
             <p><fmt:message key='PATRONYMIC_UPPER_F'/>:</p>
-            	<input type="text" name="patronymic" value="${user.patronymic}"><div class="error_field">Error message!</div>
+            	<input type="text" name="patronymic" value="${user.patronymic}"><div class="error_field">${errors.patronymic}</div>
                 <c:if test="${statusAddUser=='1'}">
-                    <input type="hidden" name="statusIdAddUser" value="1">
+                    <input type="hidden" name="statusAddUser" value="1">
                     <input type="hidden" name="workIdAddUser"value="1">
                 </c:if>
                 <c:if test="${statusAddUser=='2'}">
-                    <input type="hidden" name="statusIdAddUser" value="2">
+                    <input type="hidden" name="statusAddUser" value="2">
                     <input type="hidden" name="workIdAddUser"value="2">
                 </c:if>
                 <c:if test="${statusAddUser=='3'}">
-                    <input type="hidden" name="statusIdAddUser" value="3">
+                    <input type="hidden" name="statusAddUser" value="3">
                     <input type="hidden" name="workIdAddUser"value="3">
                 </c:if>
                 <c:if test="${statusAddUser=='4'}">
-                    <input type="hidden" name="statusIdAddUser" value="4">
+                    <input type="hidden" name="statusAddUser" value="4">
                     <p><fmt:message key='SELECT_DOCTORS_WORK_UPPER_F'/>:</p>
                 <select name="workIdAddUser">
                     <c:forEach var="work" items="${worksForDoctor}">
@@ -79,7 +94,7 @@
                 </select>
                 </c:if>
             <p><fmt:message key='BIRTHDAY_UPPER_F'/>:</p>
-            	<input type="date" id="start" name="birthday" value="${dateToday}" min="1910-01-01" max="${dateToday}"><div class="error_field">Error message!</div>
+            	<input type="date" id="start" name="birthday" value="${dateToday}" min="1910-01-01" max="${dateToday}"><div class="error_field">${errors.birthday}</div>
                 <br>
         	<input class="functional_but blue_but" type="submit" value="<fmt:message key='CREATE_BUTTON'/>">
         </form>

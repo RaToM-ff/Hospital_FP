@@ -13,11 +13,13 @@ public class BackToCabinetCommand extends Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
+        session.removeAttribute("message");
         if (session.getAttribute("currentUserId") == null) {
             request.setAttribute("errorMessage", "Session time is over! ReLogin please.");
             return Page.LOGIN;
         }
-        request.setAttribute("user", userService.getUserById((int) session.getAttribute("currentUserId")));
+        request.setAttribute("user", userService.getUserById(
+                (int) session.getAttribute("currentUserId")));
         return Page.CABINET_CABINET;
     }
 }

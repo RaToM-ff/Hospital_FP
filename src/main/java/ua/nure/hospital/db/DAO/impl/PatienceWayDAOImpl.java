@@ -1,7 +1,6 @@
 package ua.nure.hospital.db.DAO.impl;
 
 import org.apache.log4j.Logger;
-import ua.nure.hospital.command.common.LoginCommand;
 import ua.nure.hospital.constant.DBConstants;
 import ua.nure.hospital.db.DAO.PatienceWayDAO;
 import ua.nure.hospital.db.DBManager;
@@ -15,7 +14,7 @@ import java.util.List;
 
 public class PatienceWayDAOImpl implements PatienceWayDAO {
 
-    public static Logger logger = Logger.getLogger(LoginCommand.class);
+    public static Logger logger = Logger.getLogger(PatienceWayDAOImpl.class);
 
     @Override
     public boolean addPatienceWay(PatienceWay patienceWay) {
@@ -208,7 +207,7 @@ public class PatienceWayDAOImpl implements PatienceWayDAO {
     }
 
     @Override
-    public List<PatienceWay> getAllPatienceWaysByPatienceId(int id_patience,String orderBy) {
+    public List<PatienceWay> getAllPatienceWaysByPatienceId(int id_patience, String orderBy) {
         DBManager DBM = DBManager.getInstance();
         ResultSet resultSet = null;
         List<PatienceWay> patienceWays = new ArrayList<>();

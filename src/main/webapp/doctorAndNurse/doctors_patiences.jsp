@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="${language}"/>
+<fmt:setBundle basename='property'/>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -26,12 +28,16 @@
     	</li>
 	</ol>
 	<h2>My way's patiences</h2>
+	<div style="text-align: right;">
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=ru_RU">RU</a>
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=en_US">EN</a>
+    </div>
 <hr>
 <div class="content_div">
 	<c:if test="${empty null_p}">
 		<h3>List of patiences</h3>
 		<form method="POST" action="/Hospital_FP/controller">
-			<p>Sorted by:
+			<p><b>Sorted by:</b>
 				<input type="hidden" name="command" value="toWaysPatiencesForDoctor">
 			    <select name="filter" id="filter" filterValue="${filter}" onchange="form.submit();">
 			  		<option id="filter_sername" value="sername">Alphabet</option>
@@ -39,7 +45,7 @@
 				</select>
 		    </p>
 		</form>
-		<table border="1">
+		<table>
 		    <tr>
 		        <td>S.N.P</td>
 		        <td>Birthday</td>
@@ -54,7 +60,7 @@
 		    				<input type="hidden" name="command" value="toAllPatienceWayForDoctor">
 		    				<input type="hidden" name="patienceId" value="${patience.id}">
 		    				<input type="hidden" name="forBackButton" value="1">
-		            		<input type="submit" class="table_but blue_but" value="Completed ways">
+		            		<input type="submit" class="table_but blue_but" value="All ways">
 	            		</form>
 		            	<form style="display: inline-block;" method="POST" action="/Hospital_FP/controller">
 		    				<input type="hidden" name="command" value="toCompleteWayForDoctor">

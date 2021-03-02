@@ -19,7 +19,9 @@ public class ToAdminsForAdminCommand extends Command {
         }
         request.setAttribute("filter", order);
         HttpSession session = request.getSession();
-        request.setAttribute("admins", userService.getAdminsWithoutLoginAndPasswordOrderBy((int) session.getAttribute("currentUserId"), order));
+        request.setAttribute("admins",
+                userService.getAdminsWithoutLoginAndPasswordOrderBy(
+                        (int) session.getAttribute("currentUserId"), order));
         return Page.ADMIN_ADMINS;
     }
 }

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="${language}"/>
+<fmt:setBundle basename='property'/>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -20,6 +22,10 @@
     <div class="href_but red_but">Back</div></a>
 </div>
 <h2>Create card record for <i>${patience.sername} ${patience.name} ${patience.patronymic}</i></h2>
+<div style="text-align: right;">
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=ru_RU">RU</a>
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=en_US">EN</a>
+    </div>
 <hr>
 <div class="content_div">
 <h3>Change data:</h3>
@@ -29,14 +35,14 @@
         <input type="hidden" name="patienceId" value="${patience.id}">
         <input type="hidden" name="doctorId" value="${doctorId}">
 	<p><b>Procedures:</b></p>
-		<input type="text" name="procedures" placeholder="Procedures">
+		<input type="text" name="procedures" placeholder="Procedures"><div class="error_field">${errors.procedures}</div>
 	<p><b>Medicines:</b></p>
-		<input type="text" name="medicines" placeholder="Medicines">
+		<input type="text" name="medicines" placeholder="Medicines"><div class="error_field">${errors.medicines}</div>
     <c:if test="${statusId==4}">
         <p><b>Operations:</b></p>
-        	<input type="text" name="operations" placeholder="Operations">
+        	<input type="text" name="operations" placeholder="Operations"><div class="error_field">${errors.operations}</div>
         <p><b>Diagnosis:</b></p>
-        	<input type="text" name="diagnosis" placeholder="Diagnosis">
+        	<input type="text" name="diagnosis" placeholder="Diagnosis"><div class="error_field">${errors.diagnosis}</div>
             <input type="hidden" name="forDoctor" value="true">
     </c:if>
     <c:if test="${statusId==3}">

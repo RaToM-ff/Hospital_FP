@@ -5,6 +5,7 @@ import ua.nure.hospital.entity.PatienceWay;
 import java.util.List;
 
 public interface PatienceWayDAO {
+
     boolean addPatienceWay(PatienceWay patienceWay);
 
     boolean updatePatienceWay(PatienceWay patienceWay);
@@ -23,5 +24,5 @@ public interface PatienceWayDAO {
 
     boolean deletePatienceWayById(int id);
 
-    List<PatienceWay> getAllPatienceWaysByPatienceId(int id_patience,String orderBy);
+    List<PatienceWay> getAllPatienceWaysByPatienceId(int id_patience, String orderBy);
 }

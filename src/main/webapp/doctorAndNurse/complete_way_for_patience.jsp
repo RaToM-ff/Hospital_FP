@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="${language}"/>
+<fmt:setBundle basename='property'/>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -23,6 +25,10 @@
     <div class="href_but red_but">Back</div></a>
 </div>
 <h2>Complete the way</h2>
+<div style="text-align: right;">
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=ru_RU">RU</a>
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=en_US">EN</a>
+    </div>
 <hr>
 <div class="content_div">
 <h3>Way information:</h3>
@@ -38,11 +44,14 @@
 <div class="text_block">
 <form method="POST" action="/Hospital_FP/controller" enctype="multipart/form-data">
     <input type="hidden" name="command" value="completeWayForDoctor">
-    <input type="hidden" name="finishWayId" value="${way.id}">
+    <input type="hidden" name="completeWayId" value="${way.id}">
+    <input type="hidden" name="forBackButton" value="${forBackButton}">
     <p><b>Diagnosis:</b></p>
-        <input type="textbox" name="diagnosisFinishWay" value="${way.diagnosis}">
+        <input type="textbox" name="diagnosisFinishWay" value="${way.diagnosis}"><div class="error_field">${errors.diagnosis}</div>
     <p><b>Document:</b></p>
-        <input type="file" name="documentWayUpload" accept=".pdf" size="50" />
+        <input type="hidden" id="fileFlag" name="fileWasUploading" value="no">
+            <div class="not_list_button">
+            <input type="file" class="href_but blue_but" name="documentWayUpload" onchange="if(this.value==''){document.getElementById('fileFlag').value = 'no'} else {document.getElementById('fileFlag').value = 'yes'}" accept=".pdf" size="50" value="" /></div><div class="error_field">${errors.document_way}</div>
         <br>
     <input class="functional_but blue_but" type="submit" value="Close">
 </form>

@@ -15,20 +15,20 @@ import javax.servlet.http.HttpServletResponse;
 
 public abstract class Command implements Serializable {
 
-	protected UserService userService = new UserServiceImpl(new UserDAOImpl());
-	protected PatienceCardRecordService patienceCardRecordService = new PatienceCardRecordServiceImpl(new PatienceCardRecordDAOImpl());
-	protected WorkService workService = new WorkServiceImpl(new WorkDAOImpl());
-	protected StatusService statusService = new StatusServiceImpl(new StatusDAOImpl());
-	protected PatienceWayService patienceWayService = new PatienceWayServiceImpl(new PatienceWayDAOImpl());
-	protected CryptPassword cryptPassword = new CryptPassword();
-	protected FileSaver fileSaver = new FileSaver();
-	private static final long serialVersionUID = 8879403039606311780L;
+    protected UserService userService = new UserServiceImpl(new UserDAOImpl());
+    protected PatienceCardRecordService patienceCardRecordService = new PatienceCardRecordServiceImpl(new PatienceCardRecordDAOImpl());
+    protected WorkService workService = new WorkServiceImpl(new WorkDAOImpl());
+    protected StatusService statusService = new StatusServiceImpl(new StatusDAOImpl());
+    protected PatienceWayService patienceWayService = new PatienceWayServiceImpl(new PatienceWayDAOImpl());
+    protected CryptPassword cryptPassword = new CryptPassword();
+    protected FileSaver fileSaver = new FileSaver();
+    private static final long serialVersionUID = 8879403039606311780L;
 
-	public abstract String execute(HttpServletRequest request,
-			HttpServletResponse response) throws IOException, ServletException;
+    public abstract String execute(HttpServletRequest request,
+                                   HttpServletResponse response) throws IOException, ServletException;
 
-	@Override
-	public final String toString() {
-		return getClass().getSimpleName();
-	}
+    @Override
+    public final String toString() {
+        return getClass().getSimpleName();
+    }
 }

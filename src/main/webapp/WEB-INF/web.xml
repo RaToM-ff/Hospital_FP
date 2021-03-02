@@ -10,6 +10,45 @@
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
 
+    <!--============================================================
+	Controller
+=============================================================-->
+    <servlet>
+        <servlet-name>Controller</servlet-name>
+        <servlet-class>ua.nure.hospital.web.servlets.Controller</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Controller</servlet-name>
+        <url-pattern>/controller</url-pattern>
+    </servlet-mapping>
+
+
+    <!--============================================================
+	Encoding support filter
+=============================================================-->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>ua.nure.hospital.web.filters.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <servlet-name>Controller</servlet-name>
+    </filter-mapping>
+
+    <!--============================================================
+	Context listener
+=============================================================-->
+    <listener>
+        <listener-class>ua.nure.hospital.web.listeners.ContextListener</listener-class>
+    </listener>
+
         <!-- Config here. -->
   <display-name>Archetype Created Web Application</display-name>
 

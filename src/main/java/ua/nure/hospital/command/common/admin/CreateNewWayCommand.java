@@ -1,4 +1,4 @@
-package ua.nure.hospital.command.common;
+package ua.nure.hospital.command.common.admin;
 
 import ua.nure.hospital.command.Command;
 import ua.nure.hospital.constant.Page;
@@ -8,12 +8,14 @@ import ua.nure.hospital.entity.User;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
 public class CreateNewWayCommand extends Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        HttpSession session = request.getSession();
         int patienceId = Integer.parseInt(request.getParameter("patienceId"));
         int doctorId = Integer.parseInt(request.getParameter("doctorId"));
         PatienceWay patienceWay = new PatienceWay();
@@ -25,8 +27,10 @@ public class CreateNewWayCommand extends Command {
         patienceWay.setPatience(patience);
         patienceWay.setDoctor(doctor);
         patienceWay.setDate_come(date_come);
-        patienceWayService.addPatienceWay(patienceWay);
-        request.setAttribute("message","New way created successfully");
+        if (!patienceWayService.addPatienceWay(patienceWay)) {
+            return Page.ERROR;
+        }
+        session.setAttribute("message", "New way created successfully");
         return Page.SUCCESS;
     }
 }

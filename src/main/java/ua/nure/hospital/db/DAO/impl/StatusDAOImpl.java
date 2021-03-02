@@ -1,7 +1,6 @@
 package ua.nure.hospital.db.DAO.impl;
 
 import org.apache.log4j.Logger;
-import ua.nure.hospital.command.common.LoginCommand;
 import ua.nure.hospital.constant.DBConstants;
 import ua.nure.hospital.db.DAO.StatusDAO;
 import ua.nure.hospital.db.DBManager;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class StatusDAOImpl implements StatusDAO {
 
-    public static Logger logger = Logger.getLogger(LoginCommand.class);
+    public static Logger logger = Logger.getLogger(StatusDAOImpl.class);
 
     @Override
     public List<Status> getAllStatuses() {

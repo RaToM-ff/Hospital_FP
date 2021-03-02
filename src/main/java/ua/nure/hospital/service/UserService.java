@@ -40,7 +40,7 @@ public interface UserService {
 
     boolean getExistUserByLogin(String login);
 
-    String getPasswordById (int id);
+    String getPasswordById(int id);
 
     List<User> getAdminsWithoutLoginAndPasswordOrderBy(int id, String orderBy);
 }

@@ -20,7 +20,7 @@ public class ToAllPatienceWayForDoctorCommand extends Command {
         request.setAttribute("patienceId", request.getParameter("patienceId"));
         request.setAttribute("forBackButton", request.getParameter("forBackButton"));
         request.setAttribute("patienceData", userService.getUserById(Integer.parseInt(request.getParameter("patienceId"))));
-        request.setAttribute("ways", patienceWayService.getAllPatienceWaysByPatienceId(Integer.parseInt(request.getParameter("patienceId")),order));
+        request.setAttribute("ways", patienceWayService.getAllPatienceWaysByPatienceId(Integer.parseInt(request.getParameter("patienceId")), order));
         return Page.DOCTOR_AND_NURSE_ALL_PATIENCE_WAYS;
     }
 }

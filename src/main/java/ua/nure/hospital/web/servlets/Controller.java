@@ -4,17 +4,17 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import ua.nure.hospital.command.Command;
 import ua.nure.hospital.command.CommandContainer;
+import ua.nure.hospital.constant.Page;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/controller")
+
 @MultipartConfig
 public class Controller extends HttpServlet {
 
@@ -28,8 +28,13 @@ public class Controller extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Command command = CommandContainer.get(req.getParameter("command"));
         String page = command.execute(req, resp);
-        //resp.sendRedirect(page);из запроса всё удалится
-        req.getRequestDispatcher(page).forward(req, resp);//из запроса ничего не удаляется
+        if (page.equals(Page.SUCCESS)) {
+            logger.info("Send Redirect");
+            resp.sendRedirect(Page.SUCCESS);//из запроса всё удалится
+        } else {
+            logger.info("Forward to --> " + page);
+            req.getRequestDispatcher(page).forward(req, resp);//из запроса ничего не удаляется
+        }
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

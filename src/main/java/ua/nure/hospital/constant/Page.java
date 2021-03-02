@@ -18,6 +18,7 @@ public class Page {
     public static final String ADMIN_DOCTORS_AND_NURSES = "admin/doctors_and_nurses.jsp";
     public static final String ADMIN_WAYS = "admin/ways.jsp";
     public static final String ADMIN_ADD_USER = "admin/add_user.jsp";
+    public static final String ADMIN_ADD_WORK = "admin/add_work.jsp";
     public static final String ADMIN_ADMINS = "admin/admins.jsp";
 
     public static final String DOCTOR_AND_NURSE_ALL_PATIENCES = "doctorAndNurse/all_patiences.jsp";

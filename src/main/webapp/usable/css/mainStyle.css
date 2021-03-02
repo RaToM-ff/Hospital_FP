@@ -80,11 +80,11 @@ a {
 
 .blue_but {	
 	border: 1px solid #226666;
-	background-color: #407F7F;
+	background-color: #669999;
 }
 
 .blue_but:hover {
-	border: 1px solid #407F7F;
+	border: 1px solid #669999;
 	background-color: #003333;
 	color: white;
 }

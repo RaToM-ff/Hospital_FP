@@ -9,21 +9,22 @@ import javax.servlet.annotation.MultipartConfig;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 @MultipartConfig
 public class FileSaver {
 
-    public static Logger logger = Logger.getLogger(LoginCommand.class);
+    public static Logger logger = Logger.getLogger(FileSaver.class);
 
 
     public String save(InputStream file, String absoluteSavePath,
-                              String relativeSavePath, String fileName) {
+                       String relativeSavePath, String fileName) {
         String path = absoluteSavePath + fileName + ".pdf";
-            try {
-                java.nio.file.Files.write(Paths.get(path), ByteStreams.toByteArray(file));
-            } catch (IOException exception) {
-                logger.warn(exception.getMessage());
-            }
+        try {
+            java.nio.file.Files.write(Paths.get(path), ByteStreams.toByteArray(file));
+        } catch (IOException exception) {
+            logger.warn(exception.getMessage());
+        }
         return relativeSavePath + fileName + ".pdf";
     }
 }

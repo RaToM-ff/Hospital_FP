@@ -1,8 +1,6 @@
 package ua.nure.hospital.db.DAO.impl;
 
 import org.apache.log4j.Logger;
-import ua.nure.hospital.command.CommandContainer;
-import ua.nure.hospital.command.common.LoginCommand;
 import ua.nure.hospital.constant.DBConstants;
 import ua.nure.hospital.db.DAO.PatientCardRecordDAO;
 import ua.nure.hospital.db.DBManager;
@@ -16,7 +14,7 @@ import java.util.List;
 
 public class PatienceCardRecordDAOImpl implements PatientCardRecordDAO {
 
-    public static Logger logger = Logger.getLogger(LoginCommand.class);
+    public static Logger logger = Logger.getLogger(PatienceCardRecordDAOImpl.class);
 
     @Override
     public boolean addPatienceCardRecordForDoctor(PatienceCardRecord patienceCardRecord) {
@@ -131,12 +129,12 @@ public class PatienceCardRecordDAOImpl implements PatientCardRecordDAO {
     }
 
     @Override
-    public List<PatienceCardRecord> getAllPatienceCardRecordsByIdPatienceOrderBy(int id_patience,String orderBy) {
+    public List<PatienceCardRecord> getAllPatienceCardRecordsByIdPatienceOrderBy(int id_patience, String orderBy) {
         DBManager DBM = DBManager.getInstance();
         ResultSet resultSet = null;
         List<PatienceCardRecord> patienceCardRecords = new ArrayList<>();
         try (Connection connection = DBM.getConnection(DBManager.getUrl());
-             PreparedStatement preparedStatement = connection.prepareStatement(DBConstants.SELECT_PATIENCE_CARD_RECORDS_BY_ID_PATIENCE_ORDER_BY.replace("replaceColumn",orderBy))) {
+             PreparedStatement preparedStatement = connection.prepareStatement(DBConstants.SELECT_PATIENCE_CARD_RECORDS_BY_ID_PATIENCE_ORDER_BY.replace("replaceColumn", orderBy))) {
             preparedStatement.setInt(1, id_patience);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -145,7 +143,8 @@ public class PatienceCardRecordDAOImpl implements PatientCardRecordDAO {
                 User patience = new User();
                 Work work = new Work();
                 patienceCardRecord.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_ID));
-                doctor.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_DOCTOR_USER_ID));;
+                doctor.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_DOCTOR_USER_ID));
+                ;
                 doctor.setSername(resultSet.getString("doctorsSername"));
                 doctor.setName(resultSet.getString("doctorsName"));
                 doctor.setPatronymic(resultSet.getString("doctorsPatronymic"));
@@ -184,7 +183,8 @@ public class PatienceCardRecordDAOImpl implements PatientCardRecordDAO {
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 patienceCardRecord.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_ID));
-                doctor.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_DOCTOR_USER_ID));;
+                doctor.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_DOCTOR_USER_ID));
+                ;
                 doctor.setSername(resultSet.getString("doctorsSername"));
                 doctor.setName(resultSet.getString("doctorsName"));
                 doctor.setPatronymic(resultSet.getString("doctorsPatronymic"));
@@ -209,12 +209,12 @@ public class PatienceCardRecordDAOImpl implements PatientCardRecordDAO {
     }
 
     @Override
-    public List<PatienceCardRecord> getAllPatienceCardRecordsByIdDoctorOrderBy(int id_doctor,String orderBy) {
+    public List<PatienceCardRecord> getAllPatienceCardRecordsByIdDoctorOrderBy(int id_doctor, String orderBy) {
         DBManager DBM = DBManager.getInstance();
         ResultSet resultSet = null;
         List<PatienceCardRecord> patienceCardRecords = new ArrayList<>();
         try (Connection connection = DBM.getConnection(DBManager.getUrl());
-             PreparedStatement preparedStatement = connection.prepareStatement(DBConstants.SELECT_PATIENCE_CARD_RECORDS_BY_ID_DOCTOR_ORDER_BY.replace("replaceColumn",orderBy))) {
+             PreparedStatement preparedStatement = connection.prepareStatement(DBConstants.SELECT_PATIENCE_CARD_RECORDS_BY_ID_DOCTOR_ORDER_BY.replace("replaceColumn", orderBy))) {
             preparedStatement.setInt(1, id_doctor);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -223,7 +223,8 @@ public class PatienceCardRecordDAOImpl implements PatientCardRecordDAO {
                 User patience = new User();
                 Work work = new Work();
                 patienceCardRecord.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_ID));
-                doctor.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_DOCTOR_USER_ID));;
+                doctor.setId(resultSet.getInt(DBConstants.FIELD_PATIENCE_CARD_RECORD_DOCTOR_USER_ID));
+                ;
                 doctor.setSername(resultSet.getString("doctorsSername"));
                 doctor.setName(resultSet.getString("doctorsName"));
                 doctor.setPatronymic(resultSet.getString("doctorsPatronymic"));

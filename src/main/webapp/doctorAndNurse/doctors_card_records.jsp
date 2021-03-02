@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<fmt:setLocale value="${language}"/>
+<fmt:setBundle basename='property'/>
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -36,8 +38,13 @@
     </li>
 </ol>
 	<h2>All your records</h2>
+	<div style="text-align: right;">
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=ru_RU">RU</a>
+        <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=en_US">EN</a>
+    </div>
 <hr>
 <div class="content_div">
+	<c:if test="${empty null_p}">
 	<h3>List of card records:</h3>
     <form method="POST" action="/Hospital_FP/controller">
 		<input type="hidden" name="command" value="toDoctorsCardRecordsForDoctor">
@@ -79,6 +86,11 @@
 	        </tr>
 	    </c:forEach>
 	</table>
+	</c:if>
+	<c:if test="${not empty null_p}">
+	<p id="filter" filterValue="${filter}"></p>
+		<h3 id="filter_patiencesSername">${null_p}</h3>
+	</c:if>
 </div>
 </div>
 </body>

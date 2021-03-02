@@ -1,7 +1,6 @@
 package ua.nure.hospital.db.DAO.impl;
 
 import org.apache.log4j.Logger;
-import ua.nure.hospital.command.common.LoginCommand;
 import ua.nure.hospital.db.DAO.UserDAO;
 import ua.nure.hospital.db.DBManager;
 import ua.nure.hospital.entity.Status;
@@ -15,7 +14,7 @@ import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
 
-    public static Logger logger = Logger.getLogger(LoginCommand.class);
+    public static Logger logger = Logger.getLogger(UserDAOImpl.class);
 
     @Override
     public boolean addUser(User user) {

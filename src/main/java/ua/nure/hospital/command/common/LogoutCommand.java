@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class LogoutCommand extends Command {
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();

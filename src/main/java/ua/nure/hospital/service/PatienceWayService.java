@@ -23,5 +23,5 @@ public interface PatienceWayService {
 
     boolean deletePatienceWayById(int id);
 
-    List<PatienceWay> getAllPatienceWaysByPatienceId(int id_patience,String orderBy);
+    List<PatienceWay> getAllPatienceWaysByPatienceId(int id_patience, String orderBy);
 }

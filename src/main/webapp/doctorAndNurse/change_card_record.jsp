@@ -61,8 +61,8 @@
 <form>
     <input type="hidden" name="deleteCardRecordId" value="${cardRecord.id}">
     <input type="hidden" name="command" value="deleteCardRecordForDoctor">
-    <h3><fmt:message key=''/>Delete card record:</h3>
-    <p><b><fmt:message key=''/>Accept delete this card record:</b>
+    <h3><fmt:message key='DELETE_CARD_RECORD'/>:</h3>
+    <p><b><fmt:message key='ACCEPT_DELETE_CARD_RECORD'/>:</b>
         <input type="checkbox"  onchange="document.getElementById('deleteCardRecord').disabled = !this.checked; if(!this.checked) {document.getElementById('deleteCardRecord').removeAttribute('class')} else {document.getElementById('deleteCardRecord').setAttribute('class','functional_but blue_but')}" />
     </p>
     <input type="submit"  disabled id="deleteCardRecord" value="<fmt:message key='DELETE_CARD_RECORD'/>">

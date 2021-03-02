@@ -61,7 +61,7 @@
     <form method="POST" action="/Hospital_FP/controller">
 		<input type="hidden" name="command" value="toWaysForAdmin">
 		<p><b><fmt:message key='SORTED_BY'/>:</b>
-		    <select class="href_but red_but" name="filter" id="filter" filterValue="${filter}" onchange="form.submit();">
+		    <select  class="href_but red_but" class="href_but red_but" name="filter" id="filter" filterValue="${filter}" onchange="form.submit();">
 		  		<option id="filter_doctorsSername" value="doctorsSername"><fmt:message key='DOCTORS_ALPHABET'/></option>
 		  		<option id="filter_patiencesSername" value="patiencesSername"><fmt:message key='PATIENCES_ALPHABET'/></option>
 		  		<option id="filter_work_name" value="work_name"><fmt:message key='PROFESSION'/></option>

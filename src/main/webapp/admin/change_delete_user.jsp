@@ -82,7 +82,7 @@
         <c:if test="${user.status.id=='4'}">
             <input type="hidden" name="statusIdChangeUser" value="4">
             <p><b><fmt:message key='SELECT_DOCTORS_SPETIALIZATION'/>:</b></p>
-        <select name="workIdChangeUser">
+        <select  class="href_but red_but" name="workIdChangeUser">
             <c:forEach var="work" items="${worksForDoctor}">
                 <option id="dropList${work.id}" value="${work.id}">${work.name}</option>
             </c:forEach>

@@ -30,7 +30,7 @@
 		<input type="hidden" name="command" value="toSetDoctorForWayForAdmin">
 
     <p><b><fmt:message key='SORTED_BY'/>:</b>
-	    <select name="filter" id="filter" filterValue="${filter}" onchange="form.submit();">
+	    <select  class="href_but red_but" name="filter" id="filter" filterValue="${filter}" onchange="form.submit();">
 	  		<option id="filter_sername" value="sername"><fmt:message key='ALPHABET'/></option>
 	  		<option id="filter_work_name" value="work_name"><fmt:message key='PROFESSION'/></option>
 	  		<option id="filter_ActivePatience" value="ActivePatience"><fmt:message key='ACTIVE_PATIENCE'/></option>

@@ -54,7 +54,7 @@
 	<h3><fmt:message key='SELECT_WORK'/>:</h3>
 	<form method="POST" action="/Hospital_FP/controller">
 		<input type="hidden" name="command" value="toPatienceForAdmin">
-	    <select  onchange="selectWork(this.value)" >
+	    <select  class="href_but red_but" onchange="selectWork(this.value)" >
 	    	<c:forEach var="work" items="${works}">
 	    		<option id="dropList${work.id}" value="${work.id}">${work.name}</option>
 	    	</c:forEach>

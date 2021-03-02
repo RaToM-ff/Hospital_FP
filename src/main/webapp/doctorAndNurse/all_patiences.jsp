@@ -48,7 +48,7 @@
 	<form method="POST" action="/Hospital_FP/controller">
 		<p><fmt:message key='SORTED_BY'/>:
 			<input type="hidden" name="command" value="toPatienceForDoctor">
-		    <select name="filter" id="filter" filterValue="${filter}" onchange="form.submit();">
+		    <select  class="href_but red_but" name="filter" id="filter" filterValue="${filter}" onchange="form.submit();">
 		  		<option id="filter_sername" value="sername"><fmt:message key='ALPHABET'/></option>
 		  		<option id="filter_birthday" value="birthday"><fmt:message key='BIRTHDAY_UPPER_F'/></option>
 			</select>

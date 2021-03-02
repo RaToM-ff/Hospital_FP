@@ -38,7 +38,7 @@
 	<div class="text_block"><p><b><fmt:message key=''/>Patience:</b>
         <c:if test="${empty way.date_out}">
         </p>
-            <select name="patienceChangeWay" size="7">
+            <select  class="href_but red_but" name="patienceChangeWay" size="7">
                 <c:forEach var="patience" items="${patiences}">
                     <option id="dropListPatience${patience.id}" value="${patience.id}">${patience.sername} ${patience.name} ${patience.patronymic}</option>
                 </c:forEach>
@@ -52,7 +52,7 @@
         <p><b><fmt:message key='DOCTOR'/>:</b>
 		<c:if test="${empty way.date_out}">
         </p>
-        <select name="doctorChangeWay"  size="7">
+        <select  class="href_but red_but" name="doctorChangeWay"  size="7">
                 <c:forEach var="doctor" items="${doctors}">
                     <option id="dropListDoctor${doctor.id}" value="${doctor.id}"> ${doctor.work.name}: ${doctor.sername} ${doctor.name} ${doctor.patronymic}</option>
                 </c:forEach>

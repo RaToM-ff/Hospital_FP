@@ -38,7 +38,7 @@
 
     <filter-mapping>
         <filter-name>EncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/WEB-INFO/*</url-pattern>
         <servlet-name>Controller</servlet-name>
     </filter-mapping>
 

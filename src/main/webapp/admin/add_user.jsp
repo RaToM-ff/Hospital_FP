@@ -4,9 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="${language}"/>
 <fmt:setBundle basename='property'/>
-
-<fmt:message key=''/>
-
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8"/>
@@ -87,7 +84,7 @@
                 <c:if test="${statusAddUser=='4'}">
                     <input type="hidden" name="statusAddUser" value="4">
                     <p><fmt:message key='SELECT_DOCTORS_WORK_UPPER_F'/>:</p>
-                <select name="workIdAddUser">
+                <select class="href_but red_but" name="workIdAddUser">
                     <c:forEach var="work" items="${worksForDoctor}">
                         <option id="dropList${work.id}" value="${work.id}">${work.name}</option>
                     </c:forEach>

@@ -27,7 +27,7 @@ public class CreateWorkForAdminCommand extends Command {
         if (!workService.addWork(work)) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "Work created successfully");
+        session.setAttribute("message", "WORK_CREATED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

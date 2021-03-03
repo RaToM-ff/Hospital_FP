@@ -30,7 +30,7 @@ public class ChangeWorkByAdminCommand extends Command {
         if (!workService.updateWork(work)) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "Work changed successfully.");
+        session.setAttribute("message", "WORK_CHANGED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 

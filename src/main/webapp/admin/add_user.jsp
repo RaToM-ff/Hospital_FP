@@ -60,15 +60,30 @@
         <form method="POST" action="/Hospital_FP/controller">
         		<input type="hidden" name="command" value="createNewUser">
         	<p><fmt:message key='LOGIN_UPPER_F'/>:</p>
-        		<input type="text" name="login" value="${user.login}"><div class="error_field">${errors.login}</div>
+        		<input type="text" name="login" value="${user.login}">
+<c:if test="${not empty errors.login}">
+            <div class="error_field"><fmt:message key='${errors.login}'/></div>
+</c:if>
         	<p><fmt:message key='PASSWORD_UPPER_F'/>:</p>
-        		<input type="text" name="password"><div class="error_field">${errors.password}</div>
+        		<input type="text" name="password">
+<c:if test="${not empty errors.password}">
+                <div class="error_field"><fmt:message key='${errors.password}'/></div>
+</c:if>
         	<p><fmt:message key='NAME_UPPER_F'/>:</p>
-        		<input type="text" name="name" value="${user.name}"><div class="error_field">${errors.name}</div>
+        		<input type="text" name="name" value="${user.name}">
+<c:if test="${not empty errors.name}">
+                <div class="error_field"><fmt:message key='${errors.name}'/></div>
+</c:if>
             <p><fmt:message key='SERNAME_UPPER_F'/>:</p>
-            	<input type="text" name="sername" value="${user.sername}"><div class="error_field">${errors.sername}</div>
+            	<input type="text" name="sername" value="${user.sername}">
+<c:if test="${not empty errors.sername}">
+                <div class="error_field"><fmt:message key='${errors.sername}'/></div>
+</c:if>
             <p><fmt:message key='PATRONYMIC_UPPER_F'/>:</p>
-            	<input type="text" name="patronymic" value="${user.patronymic}"><div class="error_field">${errors.patronymic}</div>
+            	<input type="text" name="patronymic" value="${user.patronymic}">
+<c:if test="${not empty errors.patronymic}">
+                <div class="error_field"><fmt:message key='${errors.patronymic}'/></div>
+</c:if>
                 <c:if test="${statusAddUser=='1'}">
                     <input type="hidden" name="statusAddUser" value="1">
                     <input type="hidden" name="workIdAddUser"value="1">
@@ -91,7 +106,10 @@
                 </select>
                 </c:if>
             <p><fmt:message key='BIRTHDAY_UPPER_F'/>:</p>
-            	<input type="date" id="start" name="birthday" value="${dateToday}" min="1910-01-01" max="${dateToday}"><div class="error_field">${errors.birthday}</div>
+            	<input type="date" id="start" name="birthday" value="${dateToday}" min="1910-01-01" max="${dateToday}">
+<c:if test="${not empty errors.birthday}">
+                <div class="error_field"><fmt:message key='${errors.birthday}'/></div>
+</c:if>
                 <br>
         	<input class="functional_but blue_but" type="submit" value="<fmt:message key='CREATE_BUTTON'/>">
         </form>

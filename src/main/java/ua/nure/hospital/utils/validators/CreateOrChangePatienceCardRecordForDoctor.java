@@ -9,12 +9,12 @@ import java.util.Map;
 
 public class CreateOrChangePatienceCardRecordForDoctor {
 
-    public static final String TEXT_REGEX = "^[A-Z\\u0430-\\u044F\\u0451]?[a-zA-Z0-9_\\-;.,\\u0430-\\u044F\\u0451\\u0410-\\u042F\\u0401 ]{0,254}$";
-    public static final String INCORRECT_PROCEDURES = "Procedures entered incorrect!";
-    public static final String INCORRECT_MEDICINES = "Medicines entered incorrect!";
-    public static final String INCORRECT_OPERATIONS = "Operations entered incorrect!";
-    public static final String INCORRECT_DIAGNOSIS = "Diagnosis entered incorrect!";
-    public static final String EMPTY = "Please enter info in some of the field!";
+    public static final String TEXT_REGEX = "^[A-Z\\u0410-\\u042F\\u0401]?[a-zA-Z0-9_\\-;.,\\u0430-\\u044F\\u0451\\u0410-\\u042F\\u0401 ]{0,254}$";
+    public static final String INCORRECT_PROCEDURES = "ERROR_INCORRECT_PROCEDURES";
+    public static final String INCORRECT_MEDICINES = "ERROR_INCORRECT_MEDICINES";
+    public static final String INCORRECT_OPERATIONS = "ERROR_INCORRECT_OPERATIONS";
+    public static final String INCORRECT_DIAGNOSIS = "ERROR_INCORRECT_DIAGNOSIS";
+    public static final String EMPTY = "ERROR_EMPTY";
 
     public static Map<String, String> validatePatienceCardRecord(PatienceCardRecord patienceCardRecord) {
 

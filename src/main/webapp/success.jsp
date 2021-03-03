@@ -15,7 +15,7 @@
 <h2><fmt:message key='SUCCESS'/></h2>
 <hr>
 <div class="content_div">
-    <h3>${message}</h3>
+    <h3><fmt:message key='${message}'/>. ${newPass}</h3>
     <div class="not_list_button">
     	<a href="/Hospital_FP/controller?command=backToCabinetCommand"><div class="href_but green_but"><fmt:message key='TO_THE_CABINET'/></div></a>
 	</div>

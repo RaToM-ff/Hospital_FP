@@ -26,7 +26,10 @@
 <h3><fmt:message key='ENTER_NEW_LOGIN'/>:</h3>
 <form method="POST" action="/Hospital_FP/controller">
     <input type="hidden" name="command" value="changeLogin">
-    <input type="login" name="login" value="${login}"><div class="error_field">${errors.login}</div>
+    <input type="login" name="login" value="${login}">
+<c:if test="${not empty errors.login}">
+    <div class="error_field"><fmt:message key='${errors.login}'/></div>
+</c:if>
     <br>
 	<input type="submit" class="functional_but blue_but" value="<fmt:message key='CHANGE'/>">
 </form>

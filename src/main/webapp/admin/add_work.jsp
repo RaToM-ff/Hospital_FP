@@ -28,9 +28,12 @@
 <p><fmt:message key='NAME_OF_WORK'/>:</p>
 <form method="POST" action="/Hospital_FP/controller">
 		<input type="hidden" name="command" value="createWorkForAdmin">
-		<input type="text" name="nameWork"s><div class="error_field">${errors.work_name}</div>
+		<input type="text" name="nameWork"s>
+<c:if test="${not empty errors.work_name}">
+		<div class="error_field"><fmt:message key='${errors.work_name}'/></div>
+</c:if>
 		<br>
-	<input class="functional_but blue_but" type="submit" value="Create">
+	<input class="functional_but blue_but" type="submit" value="<fmt:message key='CREATE_BUTTON'/>">
 </form>
 </div>
 </div>

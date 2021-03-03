@@ -25,7 +25,7 @@ public class ReopenWayForAdminCommand extends Command {
         if (!patienceWayService.updatePatienceWayToFinal(patienceWay)) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "Way reopened successfully");
+        session.setAttribute("message", "WAY_REOPENED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

@@ -47,11 +47,17 @@
     <input type="hidden" name="completeWayId" value="${way.id}">
     <input type="hidden" name="forBackButton" value="${forBackButton}">
     <p><b><fmt:message key='DIAGNOSIS'/>:</b></p>
-        <input type="textbox" name="diagnosisFinishWay" value="${way.diagnosis}"><div class="error_field">${errors.diagnosis}</div>
+        <input type="textbox" name="diagnosisFinishWay" value="${way.diagnosis}">
+<c:if test="${not empty errors.diagnosis}">
+        <div class="error_field"><fmt:message key='${errors.diagnosis}'/></div>
+</c:if>
     <p><b><fmt:message key='DOCUMENT'/>:</b></p>
         <input type="hidden" id="fileFlag" name="fileWasUploading" value="no">
             <div class="not_list_button">
-            <input type="file" class="href_but blue_but" name="documentWayUpload" onchange="if(this.value==''){document.getElementById('fileFlag').value = 'no'} else {document.getElementById('fileFlag').value = 'yes'}" accept=".pdf" size="50" value="" /></div><div class="error_field">${errors.document_way}</div>
+            <input type="file" class="href_but blue_but" name="documentWayUpload" onchange="if(this.value==''){document.getElementById('fileFlag').value = 'no'} else {document.getElementById('fileFlag').value = 'yes'}" accept=".pdf" size="50" value="" /></div>
+<c:if test="${not empty errors.document_way}">
+            <div class="error_field"><fmt:message key='${errors.document_way}'/></div>
+</c:if>
         <br>
     <input class="functional_but blue_but" type="submit" value="<fmt:message key='CLOSE'/>">
 </form>

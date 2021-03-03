@@ -64,9 +64,12 @@
 	<form>
 		<input type="hidden" name="command" value="changeWorkByAdmin">
 		<input type="hidden" name="idWork" id="idSelectedWork" value="">
-		<input type="text" disabled name="nameWork" id="nameSelectedWork" value=""><div class="error_field">${errors.work_name}</div>
+		<input type="text" disabled name="nameWork" id="nameSelectedWork" value="">
+<c:if test="${not empty errors.work_name}">
+		<div class="error_field"><fmt:message key='${errors.work_name}'/></div>
+		</c:if>
 		<br>
-	    <input class="functional_but blue_but" type="submit" disabled id="acceptBut" value="Change">
+	    <input class="functional_but blue_but" type="submit" disabled id="acceptBut" value="<fmt:message key='CHANGE'/>">
 	</form>
 </div>
 </div>

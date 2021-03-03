@@ -13,8 +13,8 @@ import java.util.regex.Pattern;
 public class ChangeNotFinishWay {
 
     public static final String BIRTHDAY_REGEX = "^(\\w{4})-(\\w{2})-(\\w{2})$";
-    public static final String INCORRECT_DATE_COME = "Date of set entered incorrect!";
-    public static final String EMPTY_DATE_COME = "Date of set enter birthday!";
+    public static final String INCORRECT_DATE_COME = "ERROR_INCORRECT_DATE_COME";
+    public static final String EMPTY_DATE_COME = "ERROR_EMPTY_DATE_COME";
 
     public static Map<String, String> validateWay(PatienceWay patienceWay) {
 

@@ -24,13 +24,21 @@
 <form method="POST" action="/Hospital_FP/controller">
     <input type="hidden" name="command" value="login">
     <p><b><fmt:message key='LOGIN_UPPER_F'/>:</b></p>
-	<input type="text" name="login" value="${oldLogin}"><div class="error_field">${errors.login}</div>
+	<input type="text" name="login" value="${oldLogin}">
+<c:if test="${not empty errors.login}">
+    <div class="error_field"><fmt:message key='${errors.login}'/></div>
+</c:if>
 	<p><b><fmt:message key='PASSWORD_UPPER_F'/>:</b></p>
-	<input type="password" name="password"><div class="error_field">${errors.password}</div>
+	<input type="password" name="password">
+<c:if test="${not empty errors.password}">
+    <div class="error_field"><fmt:message key='${errors.password}'/></div>
+</c:if>
     <br>
     <input class="functional_but blue_but" type="submit" value="<fmt:message key='SING_IN'/>">
     <p>
-    <div class="error_field">${errorMessage}</div>
+<c:if test="${not empty errorMessage}">
+    <div class="error_field"><fmt:message key='${errorMessage}'/></div>
+</c:if>
     </p>
 </form>
 </div>

@@ -58,7 +58,7 @@
     </c:if>
     <c:if test="${not empty null_p}">
     <p id="filter" filterValue="${filter}"></p>
-        <h3 id="filter_sername">${null_p}</h3>
+        <h3 id="filter_sername"><fmt:message key='${null_p}'/></h3>
     </c:if>
 </div>
 </div>

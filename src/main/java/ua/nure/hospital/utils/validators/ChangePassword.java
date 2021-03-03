@@ -9,11 +9,11 @@ import java.util.Map;
 public class ChangePassword {
 
     public static final String LOGIN_PASSWORD_REGEX = "^\\w{1,14}$";
-    public static final String INCORRECT_PASSWORD = "Old password entered incorrect!";
-    public static final String INCORRECT_NEW_PASSWORD = "New password entered incorrect!";
-    public static final String EMPTY_PASSWORD = "Please enter password!";
-    public static final String EMPTY_NEW_PASSWORD = "Please enter password!";
-    public static final String PASSWORD_NOT_EQUALS = "This and new password is not same!";
+    public static final String INCORRECT_PASSWORD = "ERROR_INCORRECT_PASSWORD";
+    public static final String INCORRECT_NEW_PASSWORD = "ERROR_INCORRECT_NEW_PASSWORD";
+    public static final String EMPTY_PASSWORD = "ERROR_EMPTY_PASSWORD";
+    public static final String EMPTY_NEW_PASSWORD = "ERROR_EMPTY_NEW_PASSWORD";
+    public static final String PASSWORD_NOT_EQUALS = "ERROR_PASSWORD_NOT_EQUALS";
 
     public static Map<String, String> validatePassword(String oldPassword, String newPassword, String newPassword2) {
 

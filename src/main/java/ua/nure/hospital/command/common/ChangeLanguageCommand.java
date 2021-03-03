@@ -18,7 +18,7 @@ public class ChangeLanguageCommand extends Command {
         if (ObjectUtils.isNotEmpty(request.getParameter("fromPage"))) {
             return Page.LOGIN;
         }
-        session.setAttribute("message", "Language was changed.");
+        session.setAttribute("message", "LANGUAGE_CHANGE");
         return Page.SUCCESS;
     }
 }

@@ -16,7 +16,7 @@ public class DeleteUserCommand extends Command {
         if (!userService.deleteUserById(Integer.parseInt(request.getParameter("changeUserId")))) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "User deleted successfully");
+        session.setAttribute("message", "USER_DELETED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

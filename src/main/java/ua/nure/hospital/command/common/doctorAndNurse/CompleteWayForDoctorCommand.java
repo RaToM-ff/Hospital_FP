@@ -52,7 +52,7 @@ public class CompleteWayForDoctorCommand extends Command {
         if (!patienceWayService.updatePatienceWayToFinal(patienceWay)) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "Way changed successfully");
+        session.setAttribute("message", "WAY_CHANGED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

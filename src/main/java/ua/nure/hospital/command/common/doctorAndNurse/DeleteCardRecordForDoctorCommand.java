@@ -16,7 +16,7 @@ public class DeleteCardRecordForDoctorCommand extends Command {
         if (!patienceCardRecordService.deletePatienceCardRecordForDoctorById(Integer.parseInt(request.getParameter("deleteCardRecordId")))) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "Card record deleted successfully");
+        session.setAttribute("message", "CARD_RECORD_DELETED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

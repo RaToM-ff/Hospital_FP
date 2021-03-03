@@ -47,7 +47,7 @@
 	<table>
 	    <tr>
 	        <td><fmt:message key='DOCTORS_SNP'/></td>
-	        <td><fmt:message key='PROFESSION'/>Profession</td>
+	        <td><fmt:message key='PROFESSION'/></td>
 	        <td><fmt:message key='DIAGNOSIS'/></td>
 	        <td><fmt:message key='DOCUMENT'/></td>
 	        <td><fmt:message key='DATE_OF_COME'/></td>

@@ -12,12 +12,12 @@ import java.util.regex.Pattern;
 public class ChangeFinishWay {
 
     public static final String DATE_REGEX = "^(\\w{4})-(\\w{2})-(\\w{2})$";
-    private static final String DIAGNOSIS_REGEX = "^[A-Z\\u0430-\\u044F\\u0451][a-zA-Z0-9_\\-;.,\\u0430-\\u044F\\u0451\\u0410-\\u042F\\u0401 ]{1,254}$";
-    public static final String INCORRECT_DATE_OUT = "Date of out entered incorrect!";
-    private static final String INCORRECT_DIAGNOSIS = "Diagnosis way entered incorrect!";
-    private static final String EMPTY_DATE_OUT = "Please enter date of out!";
-    private static final String EMPTY_DIAGNOSIS = "Please enter diagnosis!";
-    private static final String EMPTY_DOCUMENT_WAY = "Please choose document!";
+    private static final String DIAGNOSIS_REGEX = "^[A-Z\\u0410-\\u042F\\u0401][a-zA-Z0-9_\\-;:.,\\u0430-\\u044F\\u0451\\u0410-\\u042F\\u0401 ]{1,254}$";
+    public static final String INCORRECT_DATE_OUT = "ERROR_INCORRECT_DATE_OUT";
+    private static final String INCORRECT_DIAGNOSIS = "ERROR_INCORRECT_DIAGNOSIS";
+    private static final String EMPTY_DATE_OUT = "ERROR_EMPTY_DATE_OUT";
+    private static final String EMPTY_DIAGNOSIS = "ERROR_EMPTY_DIAGNOSIS";
+    private static final String EMPTY_DOCUMENT_WAY = "ERROR_EMPTY_DOCUMENT_WAY";
 
     public static Map<String, String> validateWay(PatienceWay patienceWay, boolean doc) {
 

@@ -11,21 +11,21 @@ import java.util.regex.Pattern;
 
 public class CreateOrChangeUser {
 
-    public static final String NAME_REGEX = "^[A-Z][a-z]{0,29}$";
+    public static final String NAME_REGEX = "^[A-Z\\u0410-\\u042F\\u0401][a-z\\-\\u0430-\\u044F\\u0451 ]{0,29}$";
     public static final String LOGIN_PASSWORD_REGEX = "^\\w{1,14}$";
     public static final String BIRTHDAY_REGEX = "^(\\w{4})-(\\w{2})-(\\w{2})$";
-    public static final String INCORRECT_NAME = "Name entered incorrect!";
-    public static final String INCORRECT_SERNAME = "Sername entered incorrect!";
-    public static final String INCORRECT_PATRONYMIC = "Patronymic entered incorrect!";
-    public static final String INCORRECT_LOGIN = "Login entered incorrect!";
-    public static final String INCORRECT_PASSWORD = "Password entered incorrect!";
-    public static final String INCORRECT_BIRTHDAY = "Birthday entered incorrect!";
-    public static final String EMPTY_FIRST_NAME = "Please enter name!";
-    public static final String EMPTY_SERNAME = "Please enter sername!";
-    public static final String EMPTY_PATRONYMIC = "Please enter patronymic!";
-    public static final String EMPTY_LOGIN = "Please enter login!";
-    public static final String EMPTY_PASSWORD = "Please enter password!";
-    public static final String EMPTY_BIRTHDAY = "Please enter birthday!";
+    public static final String INCORRECT_NAME = "ERROR_INCORRECT_NAME";
+    public static final String INCORRECT_SERNAME = "ERROR_INCORRECT_SERNAME";
+    public static final String INCORRECT_PATRONYMIC = "ERROR_INCORRECT_PATRONYMIC";
+    public static final String INCORRECT_LOGIN = "ERROR_INCORRECT_LOGIN";
+    public static final String INCORRECT_PASSWORD = "ERROR_INCORRECT_PASSWORD";
+    public static final String INCORRECT_BIRTHDAY = "ERROR_INCORRECT_BIRTHDAY";
+    public static final String EMPTY_FIRST_NAME = "ERROR_EMPTY_FIRST_NAME";
+    public static final String EMPTY_SERNAME = "ERROR_EMPTY_SERNAME";
+    public static final String EMPTY_PATRONYMIC = "ERROR_EMPTY_PATRONYMIC";
+    public static final String EMPTY_LOGIN = "ERROR_EMPTY_LOGIN";
+    public static final String EMPTY_PASSWORD = "ERROR_EMPTY_PASSWORD";
+    public static final String EMPTY_BIRTHDAY = "ERROR_EMPTY_BIRTHDAY";
 
     public static Map<String, String> validateRegistration(User user, boolean passwordCheck) {
 

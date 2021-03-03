@@ -16,7 +16,7 @@ public class DeleteWayForAdminCommand extends Command {
         if (!patienceWayService.deletePatienceWayById(Integer.parseInt(request.getParameter("deleteWayId")))) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "Way deleted successfully");
+        session.setAttribute("message", "WAY_DELETED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

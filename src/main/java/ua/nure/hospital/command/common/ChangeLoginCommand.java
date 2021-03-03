@@ -29,14 +29,14 @@ public class ChangeLoginCommand extends Command {
             return Page.CABINET_CHANGE_LOGIN;
         }
         if (userService.getExistUserByLogin(request.getParameter("login"))) {
-            errors.put("login", "This login is busy.");
+            errors.put("login", "BUSI_LOGIN");
             request.setAttribute("errors", errors);
             request.setAttribute("login", request.getParameter("login"));
             return Page.CABINET_CHANGE_LOGIN;
         }
         user.setLogin(request.getParameter("login"));
         userService.updateUserLoginById(user);
-        request.setAttribute("message", "Login changed successfully.");
+        request.setAttribute("message", "");
         return Page.SUCCESS;
     }
 }

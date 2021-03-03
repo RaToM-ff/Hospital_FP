@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CreateOrChangeWork {
-    public static final String NAME_REGEX = "^[A-Z][a-z ]{0,29}$";
-    public static final String INCORRECT_WORK = "Work entered incorrect!";
-    public static final String EMPTY_WORK = "Please enter work!";
+    public static final String NAME_REGEX = "^[A-Z\\u0410-\\u042F\\u0401][a-z\\-\\u0430-\\u044F\\u0451 ]{0,29}$";
+    public static final String INCORRECT_WORK = "ERROR_INCORRECT_WORK";
+    public static final String EMPTY_WORK = "ERROR_EMPTY_WORK";
 
 
     public static Map<String, String> validateWork(Work work) {

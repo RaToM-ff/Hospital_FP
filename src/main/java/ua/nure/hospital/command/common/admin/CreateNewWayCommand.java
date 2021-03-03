@@ -30,7 +30,7 @@ public class CreateNewWayCommand extends Command {
         if (!patienceWayService.addPatienceWay(patienceWay)) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "New way created successfully");
+        session.setAttribute("message", "NEW_WAY_CREATED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

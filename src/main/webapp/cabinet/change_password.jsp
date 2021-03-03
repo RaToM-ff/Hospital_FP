@@ -26,15 +26,24 @@
 <form method="POST" action="/Hospital_FP/controller">
     <input type="hidden" name="command" value="changePasswordByUser">
     <p><b><fmt:message key='ENTER_OLD_PASSWORD'/>:</b></p>
-    <input type="password" name="oldPassword"><div class="error_field">${errors.oldPassword}</div>
+    <input type="password" name="oldPassword">
+<c:if test="${not empty errors.oldPassword}">
+    <div class="error_field"><fmt:message key='${errors.oldPassword}'/></div>
+</c:if>
     <p><b><fmt:message key='ENTER_NEW_PASSWORD'/>:</b></p>
-	<input type="password" name="newPassword1"><div class="error_field">${errors.newPassword1}</div>
+	<input type="password" name="newPassword1">
+<c:if test="${not empty errors.newPassword1}">
+    <div class="error_field"><fmt:message key='${errors.newPassword1}'/></div>
+</c:if>
     <p><b><fmt:message key='REPEAT_NEW_PASSWORD'/>:</b></p>
-	<input type="password" name="newPassword2"><div class="error_field">${errors.newPassword2}</div>
+	<input type="password" name="newPassword2">
+<c:if test="${not empty errors.newPassword2}">
+    <div class="error_field"><fmt:message key='${errors.newPassword2}'/></div>
+</c:if>
     <br/>
 	<input type="submit" class="functional_but blue_but" value="<fmt:message key='CHANGE'/>">
 	<c:if test="${not empty errorMessage}">
-    	<h3>${errorMessage}</h3>
+    	<h3><fmt:message key='${errorMessage}'/></h3>
     </c:if>
 </form>
 </div>

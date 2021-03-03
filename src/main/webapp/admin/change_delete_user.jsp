@@ -56,17 +56,28 @@
 <form method="POST" action="/Hospital_FP/controller">
 		<input type="hidden" name="command" value="changeUserByAdmin">
 	<p><b><fmt:message key='LOGIN_UPPER_F'/>:</b></p>
-		<input type="text" name="login" value="${user.login}"><div class="error_field">${errors.login}</div>
+		<input type="text" name="login" value="${user.login}">
+<c:if test="${not empty errors.login}">
+        <div class="error_field"><fmt:message key='${errors.login}'/></div>
+</c:if>
     <p><b><fmt:message key='GENERATE_NEW_PASSWORD'/>:</b>
         <input type="checkbox" name="password" value="checked" />
         </p>
 	<p><b><fmt:message key='NAME_UPPER_F'/>:</b></p>
-		<input type="text" name="name" value="${user.name}"><div class="error_field">${errors.name}</div>
+		<input type="text" name="name" value="${user.name}">
+<c:if test="${not empty errors.name}">
+        <div class="error_field"><fmt:message key='${errors.name}'/></div>
+</c:if>
     <p><b><fmt:message key='SERNAME_UPPER_F'/>:</b></p>
     	<input type="text" name="sername" value="${user.sername}">
-        <div class="error_field">${errors.sername}</div>
+<c:if test="${not empty errors.sername}">
+        <div class="error_field"><fmt:message key='${errors.sername}'/></div>
+</c:if>
     <p><b><fmt:message key='PATRONYMIC_UPPER_F'/>:</b></p>
-    	<input type="text" name="patronymic" value="${user.patronymic}"><div class="error_field">${errors.patronymic}</div>
+    	<input type="text" name="patronymic" value="${user.patronymic}">
+<c:if test="${not empty errors.patronymic}">
+        <div class="error_field"><fmt:message key='${errors.patronymic}'/></div>
+</c:if>
         <c:if test="${user.status.id=='1'}">
             <input type="hidden" name="statusIdChangeUser" value="1">
             <input type="hidden" name="workIdChangeUser"value="1">
@@ -89,10 +100,13 @@
         </select>
         </c:if>
     <p><b><fmt:message key='BIRTHDAY_UPPER_F'/>:</b></p>
-    	<input type="date" id="start" name="birthday" value="${user.birthday}" min="1910-01-01" max="${dateToday}"><div class="error_field">${errors.birthday}</div>
+    	<input type="date" id="start" name="birthday" value="${user.birthday}" min="1910-01-01" max="${dateToday}">
+<c:if test="${not empty errors.birthday}">
+        <div class="error_field"><fmt:message key='${errors.birthday}'/></div>
+</c:if>
     	<input type="hidden" name="changeUserId" value="${user.id}">
         <br>
-	    <input class="functional_but blue_but" type="submit" value="Change">
+	    <input class="functional_but blue_but" type="submit" value="<fmt:message key='CHANGE'/>">
 </form>
 </div>
 <h3><fmt:message key='DELETE_USER'/>:</h3>
@@ -101,7 +115,7 @@
     <p><b><fmt:message key='ACCEPT_DELETE_THIS_USER'/>:</b>
         <input type="checkbox"  onchange="document.getElementById('deleteUser').disabled = !this.checked; if(!this.checked) {document.getElementById('deleteUser').removeAttribute('class')} else {document.getElementById('deleteUser').setAttribute('class','functional_but blue_but')}" />
     </p>
-    <input type="submit" class="" disabled id="deleteUser" value="Delete user" />
+    <input type="submit" class="" disabled id="deleteUser" value="<fmt:message key='DELETE_USER'/>" />
     <input type="hidden" name="changeUserId" value="${changeUserId}">
     <input type="hidden" name="command" value="deleteUser">
 </form>

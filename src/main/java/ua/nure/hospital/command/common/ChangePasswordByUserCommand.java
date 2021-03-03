@@ -33,13 +33,13 @@ public class ChangePasswordByUserCommand extends Command {
             return Page.CABINET_CHANGE_PASSWORD;
         }
         if (!cryptPassword.encryptPassword(request.getParameter("oldPassword")).equals(userService.getPasswordById((int) session.getAttribute("currentUserId")))) {
-            errors.put("oldPassword","This password not same with old.");
+            errors.put("oldPassword","NOT_SAME_PASSWORD");
             request.setAttribute("errors", errors);
             return Page.CABINET_CHANGE_PASSWORD;
         }
         user.setPassword(cryptPassword.encryptPassword(request.getParameter("newPassword1")));
         userService.updateUserPasswordById(user);
-        request.setAttribute("message", "Password changed successfully.");
+        request.setAttribute("message", "PASSWORD_CHANGED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

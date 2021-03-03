@@ -9,8 +9,8 @@ import java.util.Map;
 public class ChangeLogin {
 
     public static final String LOGIN_PASSWORD_REGEX = "^\\w{1,14}$";
-    public static final String INCORRECT_LOGIN = "Login entered incorrect!";
-    public static final String EMPTY_LOGIN = "Please enter login!";
+    public static final String INCORRECT_LOGIN = "ERROR_INCORRECT_LOGIN";
+    public static final String EMPTY_LOGIN = "ERROR_EMPTY_LOGIN";
 
     public static Map<String, String> validateLogin(String login) {
 

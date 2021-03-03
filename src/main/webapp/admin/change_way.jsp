@@ -24,7 +24,7 @@
     <div class="not_list_button">
         <a href="/Hospital_FP/controller?command=toWaysForAdmin"><div class="href_but red_but"><fmt:message key='BACK_UPPER_F'/></div></a>
     </div>
-<h2><fmt:message key=''/>Change way</h2>
+<h2><fmt:message key='CHANGE_WAY'/></h2>
 <div style="text-align: right;">
         <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=ru_RU">RU</a>
         <a class="href_but blue_but" href="/Hospital_FP/controller?command=changeLanguage&setLanguage=en_US">EN</a>
@@ -35,7 +35,7 @@
 <form method="POST" action="/Hospital_FP/controller" enctype="multipart/form-data">
 		<input type="hidden" name="command" value="changeWayForAdmin">
         <input type="hidden" name="changeWayId" value="${way.id}">
-	<div class="text_block"><p><b><fmt:message key=''/>Patience:</b>
+	<div class="text_block"><p><b><fmt:message key='PATIENCE_UPPER_F'/>:</b>
         <c:if test="${empty way.date_out}">
         </p>
             <select  class="href_but red_but" name="patienceChangeWay" size="7">
@@ -66,7 +66,10 @@
         <p><b><fmt:message key='DATE_OF_COME'/>:</b>
         <c:if test="${empty way.date_out}">
         </p>
-            <input type="date" id="start" name="dateComeChangeWay" value="${way.date_come}" min="1910-01-01" max="${dateToday}"><div class="error_field">${errors.date_come}</div>
+            <input type="date" id="start" name="dateComeChangeWay" value="${way.date_come}" min="1910-01-01" max="${dateToday}">
+<c:if test="${not empty errors.date_come}">
+            <div class="error_field"><fmt:message key='${errors.date_come}'/></div>
+</c:if>
         </c:if>
         <c:if test="${not empty way.date_out}">
             ${way.date_come}</p>
@@ -77,19 +80,28 @@
     <div class="text_block">
         <input type="hidden" name="changeFinishFlag" value="true">
         <p><b><fmt:message key='DIAGNOSIS'/>:</b></p>
-            <input type="textbox" name="diagnosisChangeWay" value="${way.diagnosis}"><div class="error_field">${errors.diagnosis}</div>
+            <input type="textbox" name="diagnosisChangeWay" value="${way.diagnosis}">
+<c:if test="${not empty errors.diagnosis}">
+            <div class="error_field"><fmt:message key='${errors.diagnosis}'/></div>
+</c:if>
         <p><b><fmt:message key='DOCUMENT'/>:</b></p>
         <div class="not_list_button">
             <a href="${way.documentWay}" target="_blank"><div class="href_but blue_but"><fmt:message key='OPEN_FILE'/></div></a>
         </div>
             <input type="hidden" id="fileFlag" name="fileWasUploading" value="no">
             <div class="not_list_button">
-            <input type="file" class="href_but blue_but" name="documentWayUpload" onchange="if(this.value==''){document.getElementById('fileFlag').value = 'no'} else {document.getElementById('fileFlag').value = 'yes'}" accept=".pdf" size="50" value="" /></div><div class="error_field">${errors.document_way}</div>
+            <input type="file" class="href_but blue_but" name="documentWayUpload" onchange="if(this.value==''){document.getElementById('fileFlag').value = 'no'} else {document.getElementById('fileFlag').value = 'yes'}" accept=".pdf" size="50" value="" /></div>
+<c:if test="${not empty errors.document_way}">
+            <div class="error_field"><fmt:message key='${errors.document_way}'/></div>
+</c:if>
         <p><b><fmt:message key='DATE_OF_OUT'/>:</b></p>
-            <input type="date" id="start" name="dateOutChangeWay" value="${way.date_out}" min="${way.date_come}" max="${dateToday}"><div class="error_field">${errors.date_out}</div>
+            <input type="date" id="start" name="dateOutChangeWay" value="${way.date_out}" min="${way.date_come}" max="${dateToday}">
+<c:if test="${not empty errors.date_out}">
+            <div class="error_field"><fmt:message key='${errors.date_out}'/></div>
+            </c:if>
     </div>
     </c:if>
-	    <input class="functional_but blue_but" type="submit" value="Change">
+	    <input class="functional_but blue_but" type="submit" value="<fmt:message key='CHANGE'/>">
 </form>
 </div>
 </div>

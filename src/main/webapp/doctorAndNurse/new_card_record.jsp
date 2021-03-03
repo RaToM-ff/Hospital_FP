@@ -35,14 +35,26 @@
         <input type="hidden" name="patienceId" value="${patience.id}">
         <input type="hidden" name="doctorId" value="${doctorId}">
 	<p><b><fmt:message key='PROCEDURES'/>:</b></p>
-		<input type="text" name="procedures" placeholder="Procedures"><div class="error_field">${errors.procedures}</div>
+		<input type="text" name="procedures">
+<c:if test="${not empty errors.procedures}">
+        <div class="error_field"><fmt:message key='${errors.procedures}'/></div>
+</c:if>
 	<p><b><fmt:message key='MEDICINES'/>:</b></p>
-		<input type="text" name="medicines" placeholder="Medicines"><div class="error_field">${errors.medicines}</div>
+		<input type="text" name="medicines">
+<c:if test="${not empty errors.medicines}">
+        <div class="error_field"><fmt:message key='${errors.medicines}'/></div>
+</c:if>
     <c:if test="${statusId==4}">
         <p><b><fmt:message key='OPERATIONS'/>:</b></p>
-        	<input type="text" name="operations" placeholder="Operations"><div class="error_field">${errors.operations}</div>
+        	<input type="text" name="operations">
+<c:if test="${not empty errors.operations}">
+            <div class="error_field"><fmt:message key='${errors.operations}'/></div>
+</c:if>
         <p><b><fmt:message key='DIAGNOSIS'/>:</b></p>
-        	<input type="text" name="diagnosis" placeholder="Diagnosis"><div class="error_field">${errors.diagnosis}</div>
+        	<input type="text" name="diagnosis">
+<c:if test="${not empty errors.diagnosis}">
+            <div class="error_field"><fmt:message key='${errors.diagnosis}'/></div>
+</c:if>
             <input type="hidden" name="forDoctor" value="true">
     </c:if>
     <c:if test="${statusId==3}">

@@ -22,7 +22,7 @@
     <c:if test="${forBackButton==2}">
         <a href="/Hospital_FP/controller?command=toDoctorsCardRecordsForDoctor">
     </c:if>
-    <div class="href_but red_but"><fmt:message key=''/>Back</div></a>
+    <div class="href_but red_but"><fmt:message key='BACK_UPPER_F'/></div></a>
 </div>
 <h2><fmt:message key='CHANGE_OR_DELETE_CARD_RECORD_FOR'/> <i>${racordWay.patience.sername} ${racordWay.patience.name} ${racordWay.patience.patronymic}</i></h2>
 <div style="text-align: right;">
@@ -40,14 +40,26 @@
         <input type="hidden" name="patienceId" value="${cardRecord.patience.id}">
         <input type="hidden" name="doctorId" value="${cardRecord.doctor.id}">
 	<p><b><fmt:message key='PROCEDURES'/>:</b></p>
-		<input type="text" name="procedures" placeholder="Procedures" value="${cardRecord.procedures}"><div class="error_field">${errors.procedures}</div>
+		<input type="text" name="procedures" value="${cardRecord.procedures}">
+<c:if test="${not empty errors.procedures}">
+        <div class="error_field"><fmt:message key='${errors.procedures}'/></div>
+</c:if>
 	<p><b><fmt:message key='MEDICINES'/>:</b></p>
-		<input type="text" name="medicines" placeholder="Medicines" value="${cardRecord.medicines}"><div class="error_field">${errors.medicines}</div>
+		<input type="text" name="medicines" value="${cardRecord.medicines}">
+<c:if test="${not empty errors.medicines}">
+        <div class="error_field"><fmt:message key='${errors.medicines}'/></div>
+</c:if>
     <c:if test="${statusId==4}">
         <p><b><fmt:message key='OPERATIONS'/>:</b></p>
-            <input type="text" name="operations" placeholder="Operations" value="${cardRecord.operations}"><div class="error_field">${errors.operations}</div>
+            <input type="text" name="operations" value="${cardRecord.operations}">
+<c:if test="${not empty errors.operations}">
+            <div class="error_field"><fmt:message key='${errors.operations}'/></div>
+</c:if>
         <p><b><fmt:message key='DIAGNOSIS'/>:</b></p>
-            <input type="text" name="diagnosis" placeholder="Diagnosis" value="${cardRecord.diagnosis}"><div class="error_field">${errors.diagnosis}</div>
+            <input type="text" name="diagnosis" value="${cardRecord.diagnosis}">
+<c:if test="${not empty errors.diagnosis}">
+            <div class="error_field"><fmt:message key='${errors.diagnosis}'/></div>
+</c:if>
             <input type="hidden" name="forDoctor" value="true">
     </c:if>
     <c:if test="${statusId==3}">

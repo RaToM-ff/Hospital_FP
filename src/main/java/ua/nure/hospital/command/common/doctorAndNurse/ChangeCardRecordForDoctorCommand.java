@@ -55,7 +55,7 @@ public class ChangeCardRecordForDoctorCommand extends Command {
                 return Page.ERROR;
             }
         }
-        session.setAttribute("message", "Card record chang  ed successfully");
+        session.setAttribute("message", "CARD_RECORD_CHANGED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

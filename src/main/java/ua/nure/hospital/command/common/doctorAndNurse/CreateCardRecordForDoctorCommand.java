@@ -57,7 +57,7 @@ public class CreateCardRecordForDoctorCommand extends Command {
                 return Page.ERROR;
             }
         }
-        session.setAttribute("message", "Card record created successfully");
+        session.setAttribute("message", "CARD_RECORD_CREATED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

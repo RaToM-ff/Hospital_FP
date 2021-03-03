@@ -14,6 +14,7 @@ public class BackToCabinetCommand extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         HttpSession session = request.getSession();
         session.removeAttribute("message");
+        session.removeAttribute("newPass");
         if (session.getAttribute("currentUserId") == null) {
             request.setAttribute("errorMessage", "Session time is over! ReLogin please.");
             return Page.LOGIN;

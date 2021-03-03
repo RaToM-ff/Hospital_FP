@@ -51,7 +51,7 @@ public class ChangeUserByAdminCommand extends Command {
             return new ToChangeUserForAdminCommand().execute(request, response);
         }
         request.setAttribute("test", "test");
-        session.setAttribute("message", "User changed successfully.");
+        session.setAttribute("message", "USER_CHANGED_SUCCESSFULLY");
         if (!ObjectUtils.isEmpty(request.getParameter("password"))) {
             StringBuilder newPass = new StringBuilder();
             for (int i = 0; i < 4; i++) {
@@ -61,7 +61,8 @@ public class ChangeUserByAdminCommand extends Command {
             if (!userService.updateUserPasswordById(user)) {
                 return Page.ERROR;
             }
-            session.setAttribute("message", "User changed successfully. New password: <b>" + newPass + "</b>");
+            session.setAttribute("message", "USER_CHANGED_SUCCESSFULLY_NEW_PASS");
+            session.setAttribute("newPass", "<b>" + newPass + "</b>");
         }
         if (!userService.updateUserWithoutLoginAndPasswordById(user)) {
             return Page.ERROR;

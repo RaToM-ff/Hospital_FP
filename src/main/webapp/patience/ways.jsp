@@ -57,7 +57,7 @@
                 </tr>
             </c:forEach>
         </table>
-        <h3><fmt:message key=''/>Not finish ways</h3>
+        <h3><fmt:message key='NOT_FINISH_WAYS'/></h3>
         <table>
             <tr>
                 <td><fmt:message key='DOCTOR_UPPER_F'/></td>
@@ -75,7 +75,7 @@
         </c:if>
     <c:if test="${not empty null_p}">
     <p id="filter" filterValue="${filter}"></p>
-        <h3 id="filter_sername">${null_p}</h3>
+        <h3 id="filter_sername"><fmt:message key='${null_p}'/></h3>
     </c:if>
     </div>
 </div>

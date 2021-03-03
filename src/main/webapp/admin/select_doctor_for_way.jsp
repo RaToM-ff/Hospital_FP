@@ -24,7 +24,7 @@
 	<hr>
 	<div class="content_div">
 	<h3><fmt:message key='SELECTED_PATIECNE'/>: <i>${patience.sername} ${patience.name} ${patience.patronymic}</i></h3>
-	<h3>Select doctor for create way</h3>
+	<h3><fmt:message key='SELECT_DOCTOR_FOR_WAY'/></h3>
 	<form method="POST" action="/Hospital_FP/controller">
 		<input type="hidden" name="patienceId" value="${patienceId}">
 		<input type="hidden" name="command" value="toSetDoctorForWayForAdmin">

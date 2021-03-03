@@ -65,7 +65,6 @@ public class ChangeWayForAdminCommand extends Command {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            //Map<String, String> errors = ChangeFinishWay.validateWay(patienceWay, request.getParameter("fileWasUploading").equals("no"));
             Map<String, String> errors = ChangeFinishWay.validateWay(
                     patienceWay,
                     false);
@@ -92,7 +91,7 @@ public class ChangeWayForAdminCommand extends Command {
                 return Page.ERROR;
             }
         }
-        session.setAttribute("message", "Way changed successfully");
+        session.setAttribute("message", "WAY_CHANGED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 

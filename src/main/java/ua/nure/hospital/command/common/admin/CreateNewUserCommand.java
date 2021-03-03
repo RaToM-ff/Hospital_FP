@@ -54,7 +54,7 @@ public class CreateNewUserCommand extends Command {
         if (!userService.addUser(user)) {
             return Page.ERROR;
         }
-        session.setAttribute("message", "User created successfully.");
+        session.setAttribute("message", "USER_CREATED_SUCCESSFULLY");
         return Page.SUCCESS;
     }
 }

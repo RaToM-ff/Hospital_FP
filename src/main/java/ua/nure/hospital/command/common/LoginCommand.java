@@ -27,7 +27,7 @@ public class LoginCommand extends Command {
         User user = userService.getUserByLoginAndPassword(request.getParameter("login"), cryptPassword.encryptPassword(request.getParameter("password")));
         logger.info(user);
         if (ObjectUtils.isEmpty(user.getStatus())) {
-            request.setAttribute("errorMessage", "Login or Password is wrong!");
+            request.setAttribute("errorMessage", "LOG_OR_PASS_IS_WRONG");
             request.setAttribute("oldLogin", request.getParameter("login"));
             return Page.LOGIN;
         }
